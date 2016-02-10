@@ -39,14 +39,7 @@ class Barracks
     (gold >= 200 && lumber >= 60 && food >= 3) ? true : false
   end
 
-  def damage(enemy)    
-    case 
-    when (enemy.class == Footman)
-      @health_points -= (enemy.attack_power / 2).ceil
-    when (enemy.class == SeigeEngine)
-      @health_points -= (enemy.attack_power * 2).ceil
-    else
-      @health_points -= (enemy.attack_power).ceil
-    end
+  def damage(enemy_attack_power)
+      @health_points -= enemy_attack_power
   end
 end
